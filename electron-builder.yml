@@ -1,0 +1,27 @@
+appId: com.zhihuvideo.title2link
+productName: 标题链接采集工具
+copyright: Copyright © 2026
+directories:
+  output: release
+# 本工具无原生模块（exceljs 为纯 JS），禁用 rebuild 避免扫描 pnpm 隔离布局出错
+npmRebuild: false
+files:
+  - dist/**
+  - renderer-dist/**
+  - package.json
+asar: true
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+mac:
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+  category: public.app-category.utilities

@@ -1,0 +1,32 @@
+{
+  "name": "zhihu-title",
+  "version": "0.1.0",
+  "private": true,
+  "description": "批量标题转知乎链接采集工具",
+  "author": "zhihu-video",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "pnpm run build && electron .",
+    "build": "tsc -p tsconfig.json && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false && tsc -p tsconfig.web.json --noEmit --pretty false",
+    "make": "pnpm run build && electron-builder --publish=never",
+    "make:win32": "pnpm run build && electron-builder --win --publish=never",
+    "make:darwin": "pnpm run build && electron-builder --mac --publish=never"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "electron": "latest",
+    "electron-builder": "^25.1.8",
+    "react": "latest",
+    "react-dom": "latest",
+    "typescript": "^5.7.3",
+    "vite": "latest"
+  }
+}
